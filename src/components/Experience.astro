@@ -1,0 +1,23 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCIE = [
+  {
+    date: "Actualmente",
+    title: "Creador de Contenido",
+    company: "Twitch",
+    description:
+      "Me especializo en el streaming de juegos, con un enfoque particular en títulos como Left 4 Dead 2 y Minecraft desde el año 2024. Apasionado por compartir experiencias de juego y conectar con la comunidad, me esfuerzo por ofrecer contenido entretenido y educativo para mis seguidores.",
+    link: "https://www.twitch.tv/xfriend12",
+  },
+];
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
