@@ -41,11 +41,31 @@ import Document from "./icons/Document.astro";
       LinkedIn
     </SocialPill>
     <SocialPill
-      href="https://publuu.com/flip-book/441747/996422/page/1"
-      target="_blank"
+      href="#"
+      onclick="descargarPDF()"
     >
       <Document class="size-4" />
       Descargar CV
     </SocialPill>
   </nav>
 </div>
+
+<script>
+  function descargarPDF() {
+    // Ruta del archivo PDF
+    var rutaPDF = "public/CV - Montaño García.pdf";
+    
+    // Crear un elemento <a> temporal para descargar el PDF
+    var link = document.createElement("a");
+    link.href = rutaPDF;
+    link.download = "CV - Montaño García.pdf";
+    
+    // Simular el clic en el enlace temporal
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Abrir el PDF en una nueva pestaña
+    window.open(rutaPDF, '_blank');
+  }
+  </script>
