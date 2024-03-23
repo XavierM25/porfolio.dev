@@ -1,0 +1,14 @@
+---
+import EU from './icons/EU.astro';
+import Mexico from './icons/Mexico.astro';
+
+let currentLanguage = 'es'; // idioma predeterminado
+const changeLanguage = (event) => {
+  currentLanguage = event.target.value;
+}
+---
+
+<select :onChange={changeLanguage}>
+    <option value="es">{<Mexico />} Español</option>
+    <option value="en">{<EU />} Inglés</option>
+  </select>
