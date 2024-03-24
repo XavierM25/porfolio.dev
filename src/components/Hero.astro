@@ -1,22 +1,9 @@
 ---
-const personalImageAlt = "David Montaño";
 import Badge from "../components/Badge.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import MailIcon from "../components/icons/Mail.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Document from "./icons/Document.astro";
-import ChangeLan from "./ChageLan.astro";
-
-const changeLanguage = (lang) => {
-  document.getElementById("h1-en").style.display =
-    lang === "en" ? "block" : "none";
-  document.getElementById("h1-es").style.display =
-    lang === "es" ? "block" : "none";
-  document.getElementById("p-en").style.display =
-    lang === "en" ? "block" : "none";
-  document.getElementById("p-es").style.display =
-    lang === "es" ? "block" : "none";
-};
 ---
 
 <div class="max-w-xl">
@@ -32,13 +19,6 @@ const changeLanguage = (lang) => {
     </a>
   </div>
   <h1
-    id="h1-en"
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-    style="display: none;"
-  >
-    Hello, I'm David
-  </h1>
-  <h1
     id="h1-es"
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
@@ -52,13 +32,6 @@ const changeLanguage = (lang) => {
     Especializado en la parte de rendimiento para brindar la mejora en la experiencia
     del usuario.
   </p>
-  <p
-    id="p-en"
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-  >
-    +2 years of experience. <strong>Web Developer</strong> from Lima, Peru 🇵🇪. Specialist
-    in the performance part to provide improved user experience.
-  </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:xaviermg2504@gmail.com">
       <MailIcon class="size-4" />
@@ -69,12 +42,13 @@ const changeLanguage = (lang) => {
       LinkedIn
     </SocialPill>
     <SocialPill
-      href="https://publuu.com/flip-book/441747/996422/page/1"
+      href="/path/to/CV.pdf"
       target="_blank"
+      download="CV.pdf"
+      onclick="window.open('/path/to/CV.pdf', '_blank')"
     >
       <Document class="size-4" />
       Descargar CV
     </SocialPill>
   </nav>
 </div>
-<ChangeLan onLanguageChange={changeLanguage} />
