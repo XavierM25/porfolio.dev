@@ -59,9 +59,11 @@ id="line"
 <script>
   const line = document.getElementById('line');
 
-  window.addEventListener('scroll', () => {
-    const scrollPos = window.scrollY;
-    const maxHeight = document.body.offsetHeight;
-    line.style.height = `${(scrollPos / maxHeight) * 100}vh`;
-  });
+  if (line) {
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY;
+      const maxHeight = document.body.offsetHeight;
+      line.style.height = `${(scrollPos / maxHeight) * 100}vh`;
+    });
+  }
 </script>
