@@ -19,13 +19,11 @@ import Document from "./icons/Document.astro";
     </a>
   </div>
   <h1
-    id="h1-es"
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
     Hola, soy David
   </h1>
   <p
-    id="p-es"
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
     +2 años de experiencia. <strong>Desarrollador Web</strong> de Lima, Perú 🇵🇪.
@@ -51,3 +49,20 @@ import Document from "./icons/Document.astro";
 </SocialPill>
   </nav>
 </div>
+
+<style>
+  @keyframes aparecer {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  h1 {
+    animation: aparecer 2s ease-out;
+  }
+</style>
