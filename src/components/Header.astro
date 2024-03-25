@@ -6,6 +6,7 @@ const navItems = [
     title: "Inicio",
     label: "inicio",
     url: "/#inicio",
+    active: true,
   },
   {
     title: "Experiencia",
@@ -37,13 +38,14 @@ const navItems = [
     class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
   >
     {
-      navItems.map((link) => (
+      navItems.map((item) => (
         <a
           class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
-          aria-label={link.label}
-          href={link.url}
+          aria-label={item.label}
+          href={item.url}
+          class={item.active ? 'active' : ''}
         >
-          {link.title}
+          {item.title}
         </a>
       ))
     }
