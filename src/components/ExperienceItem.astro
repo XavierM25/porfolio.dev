@@ -55,15 +55,3 @@ id="line"
     }
   </div>
 </div>
-
-<script>
-  const line = document.getElementById('line');
-
-  if (line) {
-    window.addEventListener('scroll', () => {
-      const scrollPos = window.scrollY;
-      const maxHeight = document.body.offsetHeight;
-      line.style.height = `${(scrollPos / maxHeight) * 65}vh`;
-    });
-  }
-</script>
